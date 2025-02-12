@@ -116,7 +116,7 @@
 
     <h1>Happy Valentine’s Day, <span id="name">To My Beautiful Hilary</span> ❤️</h1>
     <p class="message">
-        From the moment we met, you became my world. Every laugh, every text, and every moment with you means everything to me. I know things havent been too great lately and even at that youve done nothing but help in so many ways than i can count. i want this valentines day to be an opportunity for me to tell you just how much you mean to me❤️. I couldnt get you flowers or take you out on a nice dinner, ant least not today... but what i can do is put in the effort to make you know that you are special to me and i always want you to feel that way. I love you more than words can begin to express, you are my everything, my sunshine on a rainy day, a shoulder to cry on, a partner to rely on, my best friend, but most importantly you are and always will be the love of my life. Happy Valentines Day my beautiful queen ❤️❤️❤️  
+        From the moment we met, you became my world. Every laugh, every text, and every moment with you means everything to me. I know things havent been too great lately and even at that you've done nothing but help in so many ways than I can count. I want this valentines day to be an opportunity for me to tell you just how much you mean to me❤️. I couldn't get you flowers or take you out on a nice dinner, at least not today... but what I can do is put in the effort to make you know that you are special to me and I always want you to feel that way. I love you more than words can begin to express, and I love evrythig about you. From your smile that brightens my days, to your excessive drama displays😂 and even you act like a big baby just because you want to be pampered; and of course I succumb to such charms all the time. I don't want a life without you in it, neither can I dare to imagine it. No matter what happens, just know that i will always ALWAYS be the man you deserve and can be proud of. Okay i'm starting to type a lot and as at when i'm typing all this i'm busy wondering if youre upset right now because ive been busy all day and barely called you lol i'd better finish up here. I love you more than there's stars in the midnight sky and I love you unconditionally. You are my everything, my sunshine on a rainy day, a shoulder to cry on, a partner to rely on, my best friend, but most importantly you are and always will be the love of my life. Happy Valentines Day my beautiful queen ❤️❤️❤️  
     </p>
 
     <div class="heart">💖</div>
@@ -153,6 +153,9 @@
         <img src="gallery/photo26.jpg.jpeg" alt="Signing Out">
         <img src="gallery/photo27.jpg.jpeg" alt="Signing Out">
     </div>
+    <h2>💞 Countdown to Our Anniversary 💞</h2>
+<p id="countdown" style="font-size: 1.5em; color: white;"></p>
+
     <footer>Forever Yours till the day I die, <br> Okomi 🥰💌</footer>
 
     <script>
@@ -215,6 +218,31 @@
         }
     `;
     document.head.appendChild(styleSheet);
+</script>
+<script>
+    function updateCountdown() {
+        // Set your anniversary date (YYYY, MM - 1, DD) [Month is 0-based, so January = 0]
+        const anniversaryDate = new Date(2025, 6, 14); // Example: June 20, 2025
+
+        const now = new Date();
+        const diff = anniversaryDate - now;
+
+        if (diff <= 0) {
+            document.getElementById("countdown").innerHTML = "🎉 Happy Anniversary, My Love! 💖";
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("countdown").innerHTML =
+            `❤️ ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds until our special day! ❤️`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 </script>
 </body>
 </html>
